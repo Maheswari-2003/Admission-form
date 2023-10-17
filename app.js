@@ -3,30 +3,23 @@ const bodyParser = require('body-parser');
 const { Pool } = require('pg');
 
 const app = express();
-const port = 3000; // Change to your preferred port number
-
-// PostgreSQL database configuration
+const port = 3000; 
 const pool = new Pool({
     user: 'postgres',
     host: 'localhost',
     database: 'postgres',
     password: 'root',
-    port: 5432, // Change to your PostgreSQL port
+    port: 5432, 
 });
-
-// Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Serve static files (e.g., HTML and CSS)
 app.use(express.static('public'));
 
-
-// Serve the HTML form
 app.get('/', (req, res) => {
     res.sendFile( '/index.html'); // Adjust the path as needed
 });
 
-// Handle form submissions
+
 app.post('/submit', (req, res) => {
     const data = req.body;
 
