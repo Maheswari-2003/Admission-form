@@ -15,37 +15,36 @@
             var course = document.getElementById("course").value;
             var percentage12th = document.getElementById("percentage12th").value;
 
-            // Validation logic for name
+            
             if (name.trim() === "") {
                 alert("Name must not be empty");
                 return false;
             }
 
-            // Validation logic for date of birth
+        
             if (dob.trim() === "") {
                 alert("Date of Birth must not be empty");
                 return false;
             }
 
-            // Validation logic for mobile number
             if (!/^\d{10}$/.test(mobile)) {
                 alert("Mobile Number must be a 10-digit number");
                 return false;
             }
 
-            // Validation logic for email
+        
             if (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email)) {
                 alert("Please enter a valid email address");
                 return false;
             }
 
-            // Validation logic for address
+
             if (address.trim() === "") {
                 alert("Address must not be empty");
                 return false;
             }
 
-            // Validation logic for gender
+
             if (gender === null) {
                 alert("Please select a gender");
                 return false;
@@ -53,19 +52,19 @@
 
           
 
-            // Validation logic for father's name
+            
             if (fatherName.trim() === "") {
                 alert("Father's Name must not be empty");
                 return false;
             }
 
-            // Validation logic for course
+        
             if (course.trim() === "") {
                 alert("Course must not be empty");
                 return false;
             }
 
-            // Validation logic for percentage at 12th
+
             if (isNaN(percentage12th) || percentage12th < 0 || percentage12th > 100) {
                 alert("Please enter a valid percentage for 12th");
                 return false;
