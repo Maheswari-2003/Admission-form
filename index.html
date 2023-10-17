@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student admission form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var dob = document.getElementById("dob").value;
+            var mobile = document.getElementById("mobile").value;
+            var email = document.getElementById("email").value;
+            var address = document.getElementById("address").value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var fatherName = document.getElementById("fatherName").value;
+            var course = document.getElementById("course").value;
+            var percentage12th = document.getElementById("percentage12th").value;
+
+            // Validation logic for name
+            if (name.trim() === "") {
+                alert("Name must not be empty");
+                return false;
+            }
+
+            // Validation logic for date of birth
+            if (dob.trim() === "") {
+                alert("Date of Birth must not be empty");
+                return false;
+            }
+
+            // Validation logic for mobile number
+            if (!/^\d{10}$/.test(mobile)) {
+                alert("Mobile Number must be a 10-digit number");
+                return false;
+            }
+
+            // Validation logic for email
+            if (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email)) {
+                alert("Please enter a valid email address");
+                return false;
+            }
+
+            // Validation logic for address
+            if (address.trim() === "") {
+                alert("Address must not be empty");
+                return false;
+            }
+
+            // Validation logic for gender
+            if (gender === null) {
+                alert("Please select a gender");
+                return false;
+            }
+
+          
+
+            // Validation logic for father's name
+            if (fatherName.trim() === "") {
+                alert("Father's Name must not be empty");
+                return false;
+            }
+
+            // Validation logic for course
+            if (course.trim() === "") {
+                alert("Course must not be empty");
+                return false;
+            }
+
+            // Validation logic for percentage at 12th
+            if (isNaN(percentage12th) || percentage12th < 0 || percentage12th > 100) {
+                alert("Please enter a valid percentage for 12th");
+                return false;
+            }
+
+            return true; // Form will submit if all validations pass
+        }
+
+        function showUsers() {
+            // Add code here to handle the "Show Users" button click event
+            alert("Button clicked - Show Users");
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img id="college-logo" src="hos.jpg" alt="College Logo">
+        <h2 id="college-name">National Engineering College</h2>
+    </div>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form name="registrationForm" action="/submit" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" name="dob" id="dob" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" name="mobile" id="mobile" pattern="[0-9]{10}" required>
+                <small>Enter a 10-digit mobile number.</small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                <small>Enter a valid email address (e.g., example@email.com).</small>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea name="address" id="address" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Gender:</label>
+                <input type="radio" name="gender" value="Male" required>Male
+                <input type="radio" name="gender" value="Female" required>Female
+                <input type="radio" name="gender" value="Other" required>Other
+            </div>
+            <div class="form-group">
+                <label for="fatherName">Father's Name:</label>
+                <input type="text" name="fatherName" id="fatherName" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <input type="text" name="course" id="course" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="percentage12th">Percentage 12th</label>
+                <input type="number" name="percentage12th" id="percentage12th" required>
+            </div>
+            
+            <div class="centered-buttons">
+                <input type="submit" value="Register">
+                <input type="button" value="Show Users" onclick="showUsers()">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

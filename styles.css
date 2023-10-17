@@ -1,0 +1,105 @@
+body {
+    background-image: url('m.jpg'); /* Replace 'background.jpg' with your image URL */
+    background-size: cover; /* Use a CSS blur filter to blur the background */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.header {
+    background-color: rgba(221, 195, 23, 0.89);
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #cccccc;
+}
+
+.header img {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    margin-right: 10px;
+}
+
+#college-name {
+    /* Apply specific styles to the college name */
+    font-size: 35px;
+    color: #333;
+    font-weight: italic; 
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.container {
+    width: 35%; /* Adjust the width as needed */
+    margin: 20px auto; /* Add margin to the top and center the container horizontally */
+    padding: 20px;
+    background-color: rgba(39, 133, 196, 0.8); /* Add a semi-transparent white background for the form container */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+#college-logo{
+    width: 70px;
+    height: 70px;
+}
+
+/* ... Rest of the CSS remains the same ... */
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: italic;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="tel"],
+.form-group input[type="email"],
+.form-group textarea,
+.form-group input[type="radio"],
+.form-group input[type="file"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+
+
+.centered-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.centered-buttons input[type="submit"],
+.centered-buttons input[type="button"] {
+    background-color: #684caf;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.centered-buttons input[type="submit"]:hover,
+.centered-buttons input[type="button"]:hover {
+    background-color: #684caf;
+}
+
+/* Add margin to create space between buttons */
+.centered-buttons input[type="button"] {
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
